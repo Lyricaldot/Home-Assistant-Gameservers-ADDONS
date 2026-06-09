@@ -112,6 +112,17 @@ export SteamAppId="892970"
 export SteamGameId="892970"
 # --------------------------------------
 
+# --- BepInEx Native Linux Hooks ---
+log "INFO: Injecting BepInEx Environment Hooks"
+chmod -R 755 "${SERVER_DIR}/doorstop_libs/" || true
+chmod -R 755 "${SERVER_DIR}/BepInEx/" || true
+
+export DOORSTOP_ENABLED="1"
+export DOORSTOP_TARGET_ASSEMBLY="${SERVER_DIR}/BepInEx/core/BepInEx.Preloader.dll"
+export LD_LIBRARY_PATH="${SERVER_DIR}/doorstop_libs:${SERVER_DIR}/linux64:${LD_LIBRARY_PATH:-}"
+export LD_PRELOAD="libdoorstop_x64.so:${LD_PRELOAD:-}"
+# ----------------------------------
+
 if [ "${PORT}" != "2456" ]; then
   log "WARN: port=${PORT} set. Recommended internal port is 2456; change external mapping in HA instead."
 fi
