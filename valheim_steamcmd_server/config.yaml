@@ -1,8 +1,8 @@
 
-name: Valheim Dedicated Server (SteamCMD)
-slug: valheim_steamcmd_server
-description: Valheim Dedicated Server
-version: "1.0.5"
+name: Modded Valheim Server (BepInEx)
+slug: modded_valheim_server
+description: Valheim Dedicated Server with native BepInEx mod compatibility
+version: "1.0.5-modded"
 
 url: https://github.com/cyclemat/Home-Assistant-Gameservers-ADDONS/tree/main/valheim_steamcmd_server
 
